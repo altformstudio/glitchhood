@@ -1,0 +1,131 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#050505"><title>GLITCH_ — 555 Monochrome Artworks</title>
+<style>
+:root{--bg:#050505;--panel:#101010;--ink:#f5f5f5;--muted:#a0a0a0;--line:#303030;--accent:#fff}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:var(--bg);color:var(--ink);font:15px/1.55 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;overflow-x:hidden}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;z-index:10;opacity:.13;background:repeating-linear-gradient(0deg,transparent 0 3px,#fff 4px,transparent 5px 7px);mix-blend-mode:overlay}
+a{color:inherit;text-decoration:none}button,input{font:inherit}.wrap{width:min(1120px,calc(100% - 36px));margin:auto}
+nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:20px;border-bottom:1px solid var(--line);position:relative;z-index:11}
+.logo{font-weight:950;letter-spacing:.17em;font-size:19px}.logo span{display:inline-block;transform:skew(-15deg);margin-left:3px}.links{display:flex;gap:24px;font-size:11px;letter-spacing:.13em;color:#c8c8c8}.links a:hover{color:#fff;text-decoration:underline}
+.tag{font-size:10px;letter-spacing:.15em;border:1px solid #555;padding:7px 10px;text-transform:uppercase;color:#bbb}
+.hero{display:grid;grid-template-columns:1fr .9fr;gap:56px;align-items:center;padding:76px 0 80px;min-height:600px}
+.kicker{font-size:10px;letter-spacing:.22em;text-transform:uppercase;color:#aaa}.kicker:before{content:"// ";color:white}
+h1{font-size:clamp(68px,12vw,145px);line-height:.78;letter-spacing:-.1em;margin:23px 0 28px;font-weight:1000}
+h1 .ghost{color:transparent;-webkit-text-stroke:1px #eee;text-shadow:3px 0 #555,-2px 0 #888}
+.lede{max-width:500px;color:#c4c4c4;font-size:17px}.actions{display:flex;gap:10px;flex-wrap:wrap;margin:28px 0}
+.btn{display:inline-flex;align-items:center;justify-content:center;padding:13px 17px;background:transparent;border:1px solid #686868;color:white;font-size:11px;font-weight:800;letter-spacing:.12em;text-transform:uppercase;cursor:pointer;border-radius:0}.btn:hover{background:#fff;color:#000}.btn.primary{background:#fff;color:#000;border-color:#fff}.btn:disabled{opacity:.5;cursor:wait}
+.stats{display:flex;gap:28px;margin-top:34px;flex-wrap:wrap}.stat strong{display:block;font-size:21px;letter-spacing:-.04em}.stat span{font-size:9px;letter-spacing:.16em;color:#999;text-transform:uppercase}
+.art{aspect-ratio:1/1;border:1px solid #444;background:radial-gradient(ellipse at 50% 50%,#252525,#070707 65%);position:relative;display:grid;place-items:center;overflow:hidden}
+.art:before{content:"";position:absolute;inset:0;background:repeating-linear-gradient(0deg,transparent 0 5px,#ffffff19 6px,transparent 7px 12px),linear-gradient(112deg,transparent 38%,#ffffff18 38.5%,transparent 40%);mix-blend-mode:screen}
+.art:after{content:"";position:absolute;inset:8%;border:1px solid #ffffff3d}
+.art-slot{position:relative;z-index:1;text-align:center;width:78%;height:72%;border:1px dashed #777;display:grid;place-items:center;padding:18px;color:#aaa;font-size:11px;letter-spacing:.08em;text-transform:uppercase}
+.art-slot b{display:block;font-size:clamp(72px,14vw,160px);letter-spacing:-.16em;line-height:1;color:#fff;text-shadow:5px 0 #777,-4px 0 #333}
+.art-slot small{display:block;margin-top:16px}.art-meta{position:absolute;bottom:17px;left:18px;right:18px;display:flex;justify-content:space-between;color:#aaa;font-size:9px;letter-spacing:.15em}
+.section{border-top:1px solid var(--line);padding:82px 0}.sectionhead{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:30px}
+h2{font-size:clamp(38px,6vw,68px);line-height:.9;letter-spacing:-.075em;margin:13px 0;font-weight:950}.intro{max-width:410px;color:var(--muted);font-size:13px}
+.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}.card{border:1px solid var(--line);background:#0b0b0b;padding:22px;min-height:150px}.num{font-size:10px;color:#888;letter-spacing:.17em}.card h3{font-size:19px;margin:24px 0 6px}.card p{color:#999;font-size:12px;margin:0}
+.steps{display:grid;grid-template-columns:repeat(4,1fr);border:1px solid var(--line)}.step{padding:19px;border-right:1px solid var(--line)}.step:last-child{border:0}.step b{font-size:10px;color:#aaa;letter-spacing:.16em}.step h3{font-size:16px;margin:15px 0 7px}.step p{font-size:12px;color:#999}
+.panel{border:1px solid #414141;background:#0d0d0d;padding:clamp(18px,4vw,32px)}.formgrid{display:grid;grid-template-columns:1fr 1fr;gap:18px}label{display:block;color:#ddd;font-size:12px;margin:14px 0 7px}input:not([type=checkbox]){width:100%;padding:13px 14px;border:1px solid #444;background:#050505;color:white;border-radius:0;outline:none}input:focus{border-color:#fff}.small{font-size:11px;color:#888}.full{grid-column:1/-1}.tasks{display:grid;gap:8px;margin-top:10px}.task{display:flex;align-items:center;justify-content:space-between;gap:12px;border:1px solid #292929;padding:13px;transition:border-color .2s,box-shadow .2s,background .2s}.task.done{border-color:#777;background:#ffffff08;box-shadow:0 0 12px #ffffff12, inset 0 0 12px #ffffff08}.task-title{font-size:12px;font-weight:800}.task-sub{font-size:10px;color:#888}.task .btn{padding:9px 10px;font-size:9px;white-space:nowrap}.reply-field{margin-top:10px;padding:12px;border:1px solid #292929;background:#080808}.reply-field label{margin-top:0}.reply-field input{margin-top:5px}
+.note{border:1px solid #383838;padding:12px;margin-top:14px;color:#aaa;font-size:11px}.status{display:none;padding:12px;margin-top:14px;font-size:12px}.status.show{display:block}.status.error{border:1px solid #743b3b;background:#211010;color:#ffcaca}.status.ok{border:1px solid #777;background:#171717;color:#fff}
+.faq{border-top:1px solid #333}details{padding:19px 0;border-bottom:1px solid #333}summary{cursor:pointer;list-style:none;font-weight:800;font-size:14px;display:flex;justify-content:space-between;gap:15px}summary:after{content:"+";color:#aaa}details[open] summary:after{content:"−"}details p{color:#999;font-size:12px;max-width:780px}
+footer{border-top:1px solid #333;padding:25px 0 38px;display:flex;justify-content:space-between;gap:15px;color:#888;font-size:9px;letter-spacing:.12em}
+.hidden{display:none!important}#success{text-align:center;padding:25px 0}#success h2{font-size:52px}
+@media(max-width:760px){.hero{grid-template-columns:1fr;gap:30px;padding:48px 0 60px}.art{grid-row:1;max-width:560px;width:100%;margin:auto}.sectionhead{display:block}.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr 1fr}.step{border-bottom:1px solid #333}.step:nth-child(2){border-right:0}.step:nth-child(n+3){border-bottom:0}.formgrid{grid-template-columns:1fr}.full{grid-column:auto}.links{gap:12px}.links a:nth-child(2){display:none}}
+@media(max-width:450px){.tag{display:none}.steps{grid-template-columns:1fr}.step{border-right:0!important;border-bottom:1px solid #333!important}.step:last-child{border-bottom:0!important}.task{flex-wrap:wrap}.task .btn{margin-left:auto}.links{font-size:9px;gap:9px}}
+</style>
+</head>
+<body>
+<div class="wrap">
+<nav><a class="logo" href="#">GLITCH<span>_</span></a><div class="links"><a href="#whitelist">WHITELIST</a><a href="#collection">COLLECTION</a><a href="#faq">FAQ</a></div><span class="tag">RH CHAIN / 4663</span></nav>
+<header class="hero">
+<div><div class="kicker">Artifact series / 001—555</div><h1>GLI<span class="ghost">TCH</span></h1>
+<p class="lede">555 minimal monochrome glitch artworks.<br>Clean signals. Heavy static. Critical errors.</p>
+<div class="actions"><a class="btn primary" href="#whitelist">Join whitelist ↗</a><a class="btn" href="#collection">Explore collection ↓</a></div>
+<div class="stats"><div class="stat"><strong>555</strong><span>Total supply</span></div><div class="stat"><strong>FREE*</strong><span>Planned mint</span></div><div class="stat"><strong>1 / wallet*</strong><span>Mint limit</span></div></div>
+<p class="small">*Planned terms only. Mint status depends on the deployed smart contract.</p></div>
+<div class="art"><div class="art-slot"><div><b>G/</b>ARTWORK UPLOAD SLOT<small>Replace with your GLITCH artwork</small></div></div><div class="art-meta"><span>GLITCH / GEN-001</span><span>NO SIGNAL</span></div></div>
+</header>
+
+<section class="section" id="whitelist"><div class="sectionhead"><div><div class="kicker">01 / Early access</div><h2>Get on<br>the list.</h2></div><p class="intro">Register your X username and public EVM wallet address for the GLITCH allowlist. No wallet connection or transaction is needed to register.</p></div>
+<div class="panel">
+<div id="entryForm"><div class="kicker">Allowlist registration / no signal lost</div><div class="formgrid">
+<div><label for="handle">X USERNAME</label><input id="handle" placeholder="@yourusername" maxlength="16" autocomplete="username"><div class="small">Username only. Never enter your X password.</div></div>
+<div><label for="wallet">PUBLIC EVM WALLET</label><input id="wallet" placeholder="0x..." maxlength="42" spellcheck="false"><div class="small">For Robinhood Chain. Public address only.</div></div>
+<div class="full"><div class="tasks">
+<div class="task" data-task="follow"><div><div class="task-title">01 / FOLLOW GLITCH</div><div class="task-sub">Open the official X profile</div></div><button type="button" class="btn taskbtn" data-link="https://x.com/GlitchOnHood">Open X ↗</button></div>
+<div class="task" data-task="like"><div><div class="task-title">02 / LIKE THE ANNOUNCEMENT</div><div class="task-sub">Open the campaign post</div></div><button type="button" class="btn taskbtn" data-link="https://x.com/GlitchOnHood/status/2115784518364017118">Open X ↗</button></div>
+<div class="task" data-task="repost"><div><div class="task-title">03 / REPOST THE ANNOUNCEMENT</div><div class="task-sub">Open the campaign post</div></div><button type="button" class="btn taskbtn" data-link="https://x.com/GlitchOnHood/status/2115784518364017118">Open X ↗</button></div>
+<div class="task" data-task="reply"><div><div class="task-title">04 / REPLY TO THE ANNOUNCEMENT</div><div class="task-sub">Open the campaign post</div></div><button type="button" class="btn taskbtn" data-link="https://x.com/GlitchOnHood/status/2115784518364017118">Open X ↗</button></div><div class="reply-field"><label for="replyUrl">LINK TO YOUR X REPLY</label><input id="replyUrl" type="url" placeholder="https://x.com/yourusername/status/..." autocomplete="url"><div class="small">Paste the URL of your reply to the GLITCH announcement.</div></div>
+</div></div>
+<div class="full note">Social actions are not automatically verified. Reply links may be reviewed manually. Never share a seed phrase or private key.</div>
+<div class="full"><button id="submit" type="button" class="btn primary" style="width:100%;margin-top:12px">Submit entry ↗</button><div id="status" class="status" role="status"></div></div>
+</div></div>
+<div id="success" class="hidden"><div class="kicker">Entry received</div><h2>YOU'RE IN.</h2><p class="intro" style="margin:15px auto">Your registration was accepted. Follow the official GLITCH account for mint updates.</p><button class="btn" id="reset" type="button">Finish</button></div>
+</div></section>
+
+<section class="section" id="collection"><div class="sectionhead"><div><div class="kicker">02 / Collection file</div><h2>Clean signal.<br>Critical error.</h2></div><p class="intro">A 555-piece monochrome series exploring fragmented forms, broken signals and deliberate imperfections.</p></div>
+<div class="grid"><article class="card"><div class="num">TRAIT / 001</div><h3>Signal</h3><p>Clean lines interrupted by noise.</p></article><article class="card"><div class="num">TRAIT / 002</div><h3>Distortion</h3><p>Monochrome forms pushed out of alignment.</p></article><article class="card"><div class="num">TRAIT / 003</div><h3>Critical Error</h3><p>Unexpected breaks in minimal compositions.</p></article></div>
+<div class="grid" style="margin-top:12px"><article class="card"><div class="num">TOTAL SUPPLY</div><h3>555 artworks</h3><p>Limited collection.</p></article><article class="card"><div class="num">NETWORK</div><h3>Robinhood Chain</h3><p>EVM compatible · Chain ID 4663 · ETH gas.</p></article><article class="card"><div class="num">MINT PLAN</div><h3>Free / 1 per wallet</h3><p>Planned terms; final details depend on the published contract.</p></article></div></section>
+
+<section class="section"><div class="sectionhead"><div><div class="kicker">03 / Protocol</div><h2>How to enter.</h2></div></div><div class="steps"><div class="step"><b>01 / IDENTIFY</b><h3>Enter your X</h3><p>Provide your public X username.</p></div><div class="step"><b>02 / SIGNAL</b><h3>Open task links</h3><p>Visit the collection profile and campaign post.</p></div><div class="step"><b>03 / ADDRESS</b><h3>Submit wallet</h3><p>Provide your public EVM wallet address.</p></div><div class="step"><b>04 / CONFIRM</b><h3>You're registered</h3><p>See confirmation only after the backend accepts the entry.</p></div></div></section>
+
+<section class="section" id="faq"><div class="sectionhead"><div><div class="kicker">04 / Frequently asked</div><h2>FAQ / no static.</h2></div></div><div class="faq">
+<details><summary>What is GLITCH?</summary><p>GLITCH is a collection of 555 minimal monochrome glitch artworks. Clean signals. Heavy static. Critical errors.</p></details>
+<details><summary>Which chain is GLITCH on?</summary><p>Robinhood Chain, an EVM-compatible network. Chain ID 4663. The network uses ETH for gas. Confirm network details from official documentation before mint launch.</p></details>
+<details><summary>Is the mint free?</summary><p>The planned mint is free with a limit of one NFT per wallet. Final mint terms and availability depend on the deployed smart contract.</p></details>
+<details><summary>How do I join the whitelist?</summary><p>Enter your X username, open each social task link, provide your public wallet address and submit. Task highlighting only indicates that you opened the link; it does not verify completion.</p></details>
+<details><summary>Do I need to connect my wallet?</summary><p>No wallet connection or signature is needed for allowlist registration. Never provide a seed phrase or private key.</p></details>
+<details><summary>When does mint begin?</summary><p>The mint date and official mint link will be announced through GLITCH's official channels once confirmed.</p></details>
+</div></section>
+<footer><span>GLITCH_ / 555 MONOCHROME ARTWORKS</span><span>ROBINHOOD CHAIN · 4663</span><span>© GLITCH</span></footer>
+</div>
+
+<iframe name="resultFrame" id="resultFrame" class="hidden" title="Submission response"></iframe>
+<form id="backendForm" class="hidden" method="post" target="resultFrame">
+<input name="handle" id="postHandle"><input name="wallet" id="postWallet"><input name="replyUrl" id="postReplyUrl"><input name="website" id="websiteTrap" autocomplete="off"><input name="campaign" value="GLITCH">
+</form>
+<script>
+(() => {
+  const APPS_SCRIPT_URL = "https://script.google.com/macros/s/AKfycbyCnq1XHrJf7UEVi7L_gi1BaKzTr2oRF9xBiSgcVObTB49XNoySgSaFI5I2c4nSLfz_ow/exec";
+  const clicked = new Set();
+  const required = ["follow","like","repost","reply"];
+  const $ = id => document.getElementById(id);
+  const handlePattern = /^[a-z0-9_]{1,15}$/;
+  const walletPattern = /^0x[a-fA-F0-9]{40}$/;
+  function status(message, type="error") { const el=$("status"); el.textContent=message; el.className="status show "+type; }
+  document.querySelectorAll(".taskbtn").forEach(btn => btn.addEventListener("click", () => {
+    const url=btn.dataset.link;
+    if(!url || url.includes("REPLACE_")) { status("The site owner must add the real X profile and campaign post links before launch."); return; }
+    window.open(url,"_blank","noopener,noreferrer");
+    const task=btn.closest(".task"); clicked.add(task.dataset.task); task.classList.add("done");
+  }));
+  $("submit").addEventListener("click", () => {
+    const handle=$("handle").value.trim().replace(/^@/,"").toLowerCase();
+    const wallet=$("wallet").value.trim();
+    const replyUrl=$("replyUrl").value.trim();
+    if(!handlePattern.test(handle)) return status("Enter a valid X username (letters, numbers or underscores; max 15 characters).");
+    if(!walletPattern.test(wallet)) return status("Enter an EVM address: 0x followed by 40 hexadecimal characters.");
+    if(!required.every(t=>clicked.has(t))) return status("Open all four task links first.");
+    if(!/^https?:\/\/(www\.)?x\.com\/[^/]+\/status\/\d+/i.test(replyUrl)) return status("Paste the link to your X reply (it should look like https://x.com/username/status/...).");
+    if(APPS_SCRIPT_URL.includes("PASTE_YOUR_DEPLOYED_APPS_SCRIPT_WEB_APP_URL_HERE")) return status("Backend isn't configured yet. Add your deployed Apps Script /exec URL.");
+    $("submit").disabled=true; $("submit").textContent="Submitting…";
+    $("postHandle").value=handle; $("postWallet").value=wallet; $("postReplyUrl").value=replyUrl;
+    $("backendForm").action=APPS_SCRIPT_URL; $("backendForm").submit();
+    window.setTimeout(() => {
+      if($("submit").disabled) { $("submit").disabled=false; $("submit").textContent="Submit entry ↗"; status("No response received. Check Google Sheets before trying again."); }
+    },12000);
+  });
+  window.addEventListener("message", event => {
+    if(event.origin!=="https://"+location.host && event.origin!=="https://script.google.com" && event.origin!=="https://script.googleusercontent.com") return;
+    if(!event.data || event.data.type!=="GLITCH_ALLOWLIST_RESULT") return;
+    $("submit").disabled=false; $("submit").textContent="Submit entry ↗";
+    if(event.data.ok) { $("entryForm").classList.add("hidden"); $("success").classList.remove("hidden"); }
+    else status(event.data.message || "Entry rejected. Check your username and wallet.");
+  });
+  $("reset").addEventListener("click",()=>{ $("handle").value="";$("wallet").value="";$("replyUrl").value="";clicked.clear();document.querySelectorAll(".task").forEach(t=>t.classList.remove("done"));$("success").classList.add("hidden");$("entryForm").classList.remove("hidden");$("status").className="status";});
+})();
+</script>
+</body></html>
