@@ -1,4 +1,4 @@
-# GLITCH allowlist website
+# GLITCH website
 
 ## Files
 - `index.html`: frontend website.
